@@ -1,0 +1,59 @@
+{
+    "name": "netsells/laravel-nova-trix-attachments",
+    "description": "Simplifies and enhances the use of Laravel Nova Trix file attachments",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "netsells",
+        "nova",
+        "trix",
+        "file",
+        "attachments"
+    ],
+    "authors": [
+        {
+            "name": "Tom Moore",
+            "email": "tom.moore@netsells.co.uk"
+        },
+        {
+            "name": "Sam Jordan",
+            "email": "sam.jordan@netsells.co.uk"
+        }
+    ],
+    "repositories": {
+        "nova": {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^9.1",
+        "laravel/nova": "^3.0",
+        "symfony/dom-crawler": "^6.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netsells\\LaravelNovaTrixAttachments\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Netsells\\LaravelNovaTrixAttachments\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Netsells\\LaravelNovaTrixAttachments\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
