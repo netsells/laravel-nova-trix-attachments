@@ -28,6 +28,7 @@ jobs:
       - name: Ensure we use specific version of Laravel, and install other dependencies
         env:
           LARAVEL_VERSION: ${{ matrix.laravel }}
+          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
         run: composer require laravel/framework $LARAVEL_VERSION --no-interaction --no-scripts --prefer-dist
 
       - name: Execute tests
