@@ -37,7 +37,7 @@ class TrixFileAttachmentRule implements Rule
      */
     public function passes($attribute, $value): bool
     {
-        $data = TrixContentExtractor::extractAttachmentData($value);
+        $data = TrixContentExtractor::extractAttachmentData($value ?? '');
 
         return Collection::make($data)->every(function (?array $attachment) {
             [$contentType, $filename] = $this->getAttachmentData($attachment);

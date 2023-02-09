@@ -10,7 +10,7 @@ class TrixFileAttachmentRuleTest extends TestCase
     /**
      * @dataProvider passesProvider
      */
-    public function testPasses(string $html, bool $expected)
+    public function testPasses(?string $html, bool $expected)
     {
         $rule = new TrixFileAttachmentRule(['image/*', 'video/*']);
 
@@ -38,6 +38,10 @@ class TrixFileAttachmentRuleTest extends TestCase
                     $this->getFigureHtml('image/jpeg', 'file.jpeg'),
                 ]),
                 'expected' => false,
+            ],
+            'Empty data passes' => [
+                'html' => null,
+                'expected' => true,
             ],
             'A valid image content type passes' => [
                 'html' => $this->getFigureHtml('image/jpeg', 'file.jpeg'),
